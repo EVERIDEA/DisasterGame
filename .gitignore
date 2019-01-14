@@ -1,0 +1,10 @@
+Library/
+Temp/
+ProjectSettings/
+Assets/Resources/
+UnityPackageManager/manifest.json
+.vs/
+DisasterSimulation.sln
+DisasterSimulation.Plugins.csproj
+DisasterSimulation.csproj
+Assets/Resources.meta
