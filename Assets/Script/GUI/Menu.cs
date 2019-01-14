@@ -50,6 +50,10 @@ public class Menu : GameStateMachine<Menu>
                 Application.Quit();
                 Debug.Log("QUIT");
                 break;
+            case "level.select":
+                Application.LoadLevel("Game");
+                Debug.Log("Open Level 1");
+                break;
             default:
                 ChangeToPreviousState();
                 break;

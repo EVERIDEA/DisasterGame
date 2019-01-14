@@ -9,13 +9,7 @@ public class GameManager : GameStateMachine<GameManager>
 
     public enum States
     {
-        Logo
-      , Menu
-      , Intro
-      , Pause
-      , Playing
-      , GameOver
-      , Win
+        Intro, Pause, Playing, Result
     }
 
     private static GameManager _instance;
@@ -40,6 +34,29 @@ public class GameManager : GameStateMachine<GameManager>
     {
         Initialize<States>();
     }
+    private void Start()
+    {
+        SignalManager.Instance.AttachReceiver("button.gameui", this.OnSignalReceived);
+        Play();
+    }
+
+    private void OnSignalReceived(Dictionary<string, object> eventParam)
+    {
+        var action = (String)eventParam["action"];
+
+        switch (action)
+        {
+            case "game.cancel":
+                ChangeState(States.Playing);
+                break;
+            case "game.home":
+                Application.LoadLevel("Menu");
+                break;
+            default:
+                ChangeToPreviousState();
+                break;
+        }
+    }
 
     private void Update()
     {
@@ -52,12 +69,6 @@ public class GameManager : GameStateMachine<GameManager>
     public void Play()
     {
         ChangeState(States.Playing);
-        LoadLevel("Level1");
-    }
-
-    public void LoadLevel(String Scene)
-    {
-        Application.LoadLevel(Scene);
     }
 
     public static bool IsPlaying()

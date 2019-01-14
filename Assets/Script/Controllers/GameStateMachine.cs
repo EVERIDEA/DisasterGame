@@ -12,8 +12,7 @@ public abstract class GameStateMachine<T> : MonoBehaviour where T : GameStateMac
 
     [SerializeField]
     protected StateComponentBase<T> CurrentState;
-
-    [SerializeField]
+    
     private bool AllowDebug = false;
     
     protected void Initialize<E>() 

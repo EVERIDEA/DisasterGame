@@ -15,7 +15,7 @@ public class Logo : MonoBehaviour
 
     private void Start ()
     {
-        GameManager.Instance.ChangeState(GameManager.States.Logo);
+        //GameManager.Instance.ChangeState(GameManager.States.Logo);
         FadeImg.color = new Color(0,0,0,0);
         IsFadeIn = true;
     }
@@ -29,7 +29,7 @@ public class Logo : MonoBehaviour
         else {
             FadeOut();
             if(FadeImg.color.a < 0.2f)
-                GameManager.Instance.LoadLevel("Menu");
+                Application.LoadLevel("Menu");
         }
     }
 
