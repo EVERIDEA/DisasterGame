@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1312,7 +1312,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
+    m_LineSpacing: 1.5
   m_Text: Evernidia
 --- !u!222 &463000513
 CanvasRenderer:
@@ -1693,7 +1693,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
+    m_LineSpacing: 1.5
   m_Text: Apakah nama kantor kita??
 --- !u!222 &813636406
 CanvasRenderer:
@@ -2731,7 +2731,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
+    m_LineSpacing: 1.5
   m_Text: Everidea
 --- !u!222 &1303290127
 CanvasRenderer:
@@ -2753,7 +2753,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1424856596
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2784,6 +2784,7 @@ GameObject:
   - component: {fileID: 1427500313}
   - component: {fileID: 1427500315}
   - component: {fileID: 1427500314}
+  - component: {fileID: 1427500316}
   m_Layer: 0
   m_Name: '[MANAGER]'
   m_TagString: Untagged
@@ -2828,6 +2829,92 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00a4b2e780e9d49fdb06071207f78ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1427500316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1427500312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06994e85fa271c047bdef973f3bd8417, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  QuestionContent: {fileID: 813636405}
+  Answer1Content: {fileID: 1303290126}
+  Answer2Content: {fileID: 463000512}
+  IdQuestionPopup: 1
+  ListQuiz:
+  - Id: 1
+    Question: Apa nama perusahaan kita?
+    ListAnswer:
+    - AnswerContent: Everidea
+      IsRight: 1
+    - AnswerContent: Evernihdia
+      IsRight: 0
+  - Id: 2
+    Question: Apa judul film yang kemarin kita nobar?
+    ListAnswer:
+    - AnswerContent: Dropout
+      IsRight: 0
+    - AnswerContent: Dreadout
+      IsRight: 1
+  - Id: 3
+    Question: Apa nama hotel tempat raker kemarin dilaksanakan?
+    ListAnswer:
+    - AnswerContent: Hotel Newton
+      IsRight: 1
+    - AnswerContent: Hotel Nextown
+      IsRight: 0
+  - Id: 4
+    Question: Dimana alamat kantor sebelumnya?
+    ListAnswer:
+    - AnswerContent: Cisitubaru no 21
+      IsRight: 0
+    - AnswerContent: Cihampelas
+      IsRight: 1
+  - Id: 5
+    Question: Apa nama merk motor Bisma?
+    ListAnswer:
+    - AnswerContent: Megapro
+      IsRight: 1
+    - AnswerContent: Ninja RR
+      IsRight: 0
+  - Id: 6
+    Question: Siapakah nama asli abah Everidea?
+    ListAnswer:
+    - AnswerContent: Abah Mamot
+      IsRight: 0
+    - AnswerContent: Abah Mamat
+      IsRight: 1
+  - Id: 7
+    Question: Apa nama gedung kantor yang baru?
+    ListAnswer:
+    - AnswerContent: Block 71 Bandung
+      IsRight: 1
+    - AnswerContent: Rajo Minang
+      IsRight: 0
+  - Id: 8
+    Question: Apa nama kafe di depan kantor baru?
+    ListAnswer:
+    - AnswerContent: DiatasNormal
+      IsRight: 0
+    - AnswerContent: UpNormal
+      IsRight: 1
+  - Id: 9
+    Question: Apa kepanjangan BAT?
+    ListAnswer:
+    - AnswerContent: Bisma Abdurachman Tauhid
+      IsRight: 1
+    - AnswerContent: Bisma Anak Tukul
+      IsRight: 0
+  - Id: 9
+    Question: Apa kepanjangan BAT?
+    ListAnswer:
+    - AnswerContent: Bisma Abdurachman Tauhid
+      IsRight: 1
+    - AnswerContent: Bisma Anak Tukul
+      IsRight: 0
 --- !u!1 &1505397722
 GameObject:
   m_ObjectHideFlags: 0
