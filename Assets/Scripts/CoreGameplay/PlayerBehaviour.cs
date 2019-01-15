@@ -11,7 +11,11 @@ public class PlayerBehaviour : MonoBehaviour
 	Vector3 mousePos;
     Rigidbody2D rigidBody;      
 
-    // Use this for initialization
+	void Awake()
+	{
+		EventManager.AddListener<MovePlayerEvents>(MoveHandler);
+	}
+
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
@@ -27,17 +31,16 @@ public class PlayerBehaviour : MonoBehaviour
 			mousePos.z = transform.position.z;
 			RaycastHit2D hit = Physics2D.Raycast(mousePos2d, Vector2.zero);
 			if (hit.transform == null) {
+				move = false;
 				return;
 			}
-			if ((hit.transform.gameObject.tag=="People"))
+			if ((hit.transform.gameObject.tag=="People")&&(move==false))
 			{
-				if (move==false) 
-				{
 					move = true;
-				}
 			}
 			else
 			{
+				move = false;
 				return; //Fail
 			}
 
@@ -45,8 +48,27 @@ public class PlayerBehaviour : MonoBehaviour
 		if (move==true) 
 		{
 			transform.position = Vector3.MoveTowards (transform.position, mousePos, speed * Time.deltaTime);
-			//move = false;
 		}
 
     }
+
+	void MoveHandler(MovePlayerEvents e)
+	{
+		if (e.IsMove==true) 
+		{
+			move = true;
+		} 
+		else if (e.IsMove==false) 
+		{
+			move = false;
+		}
+	}
+
+	private void OnTriggerEnter2D(Collider2D c)
+	{
+		if (c.gameObject.tag=="People") 
+		{
+			EventManager.TriggerEvent (new RandomQuizEvents ());
+		}
+	}
 }

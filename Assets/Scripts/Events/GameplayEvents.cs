@@ -15,3 +15,18 @@ public class Quiz
 	public string Question;
 	public List <Answer> ListAnswer = new List<Answer>(); 
 }
+
+public class RandomQuizEvents : GameEvent 
+{
+	
+}
+
+public class MovePlayerEvents : GameEvent
+{
+	public bool IsMove;
+
+	public MovePlayerEvents(bool isMove)
+	{
+		IsMove = isMove;
+	}
+}
