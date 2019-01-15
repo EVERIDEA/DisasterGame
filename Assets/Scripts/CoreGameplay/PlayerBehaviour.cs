@@ -9,7 +9,8 @@ public class PlayerBehaviour : MonoBehaviour
 	bool move=false;
 	Vector2 mousePos2d;
 	Vector3 mousePos;
-    Rigidbody2D rigidBody;      
+    Rigidbody2D rigidBody; 
+	bool IsMove;
 
 	void Awake()
 	{
@@ -23,31 +24,35 @@ public class PlayerBehaviour : MonoBehaviour
     
     void Update()
     {
-		if (Input.GetMouseButtonDown (0)) 
+		if (IsMove) 
 		{
-			mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			Debug.Log(mousePos);
-			mousePos2d = new Vector2(mousePos.x, mousePos.y);
-			mousePos.z = transform.position.z;
-			RaycastHit2D hit = Physics2D.Raycast(mousePos2d, Vector2.zero);
-			if (hit.transform == null) {
-				move = false;
-				return;
-			}
-			if ((hit.transform.gameObject.tag=="People")&&(move==false))
+			if (Input.GetMouseButtonDown (0)) 
 			{
+				mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+				Debug.Log(mousePos);
+				mousePos2d = new Vector2(mousePos.x, mousePos.y);
+				mousePos.z = transform.position.z;
+				RaycastHit2D hit = Physics2D.Raycast(mousePos2d, Vector2.zero);
+				if (hit.transform == null) {
 					move = true;
+					return;
+				}
+				if ((hit.transform.gameObject.tag=="People")&&(move==false))
+				{
+					move = true;
+				}
+				else
+				{
+					move = false;
+					return; //Fail
+				}
+
 			}
-			else
+			if (move==true) 
 			{
-				move = false;
-				return; //Fail
+				transform.position = Vector3.MoveTowards (transform.position, mousePos, speed * Time.deltaTime);
 			}
 
-		}
-		if (move==true) 
-		{
-			transform.position = Vector3.MoveTowards (transform.position, mousePos, speed * Time.deltaTime);
 		}
 
     }
@@ -68,7 +73,9 @@ public class PlayerBehaviour : MonoBehaviour
 	{
 		if (c.gameObject.tag=="People") 
 		{
+			EventManager.TriggerEvent (new MovePlayerEvents (true));
 			EventManager.TriggerEvent (new RandomQuizEvents ());
+
 		}
 	}
 }
