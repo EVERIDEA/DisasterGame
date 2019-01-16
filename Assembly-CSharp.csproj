@@ -86,6 +86,7 @@
      <Compile Include="Assets\Scripts\CoreGameplay\AnswerHolder.cs" />
      <Compile Include="Assets\Scripts\CoreGameplay\PlayerBehaviour.cs" />
      <Compile Include="Assets\Scripts\CoreGameplay\QuizManager.cs" />
+     <Compile Include="Assets\Scripts\CoreGameplay\ScoreManager.cs" />
      <Compile Include="Assets\Scripts\Enum\GlobalEnum.cs" />
      <Compile Include="Assets\Scripts\Events\GameplayEvents.cs" />
      <Compile Include="Assets\Scripts\Events\MainMenuEvents.cs" />

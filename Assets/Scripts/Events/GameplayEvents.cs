@@ -50,3 +50,33 @@ public class PlayerActionEvents:GameEvent
 		IsActive = isActive;
 	}
 }
+
+public class HelpCountEvents : GameEvent
+{
+	public int HelpCount;
+
+	public HelpCountEvents(int helpCount)
+	{
+		HelpCount = helpCount;
+	}
+}
+
+public class SavedCountEvents : GameEvent
+{
+	public int SavedCount;
+
+	public SavedCountEvents(int savedCount)
+	{
+		SavedCount = savedCount;
+	}
+}
+
+public class WrongCountEvents :GameEvent
+{
+	public int WrongCount;
+
+	public WrongCountEvents(int wrongCount)
+	{
+		WrongCount = wrongCount;
+	}
+}
