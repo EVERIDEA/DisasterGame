@@ -30,6 +30,7 @@ public class QuizManager : MonoBehaviour
 				QuestionContent.text = ListQuiz [i].Question;
 				Answer1Content.text = ListQuiz [i].ListAnswer [0].AnswerContent;
 				AnswerButton [0].GetComponent<AnswerHolder> ().AnswerValue = ListQuiz [i].ListAnswer [0].IsRight;
+				AnswerButton [0].onClick.RemoveAllListeners ();
 				AnswerButton [0].onClick.AddListener (delegate {
 					Debug.Log (AnswerButton [0].GetComponent<AnswerHolder> ().AnswerValue.ToString ());
 					QuestionUI.SetActive (false);
@@ -45,6 +46,7 @@ public class QuizManager : MonoBehaviour
 				});
 				Answer2Content.text = ListQuiz [i].ListAnswer [1].AnswerContent;
 				AnswerButton [1].GetComponent<AnswerHolder> ().AnswerValue = ListQuiz [i].ListAnswer [1].IsRight;
+				AnswerButton [1].onClick.RemoveAllListeners ();
 				AnswerButton [1].onClick.AddListener (delegate {
 					Debug.Log (AnswerButton [1].GetComponent<AnswerHolder> ().AnswerValue.ToString ());
 					QuestionUI.SetActive (false);

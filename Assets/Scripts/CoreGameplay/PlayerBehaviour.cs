@@ -37,21 +37,23 @@ public class PlayerBehaviour : MonoBehaviour
 				mousePos2d = new Vector2(mousePos.x, mousePos.y);
 				mousePos.z = transform.position.z;
 				RaycastHit2D hit = Physics2D.Raycast(mousePos2d, Vector2.zero);
-				if (hit.transform == null) {
+				if (hit.transform == null) 
+				{
 					move = true;
 					return;
 				}
 				if ((hit.transform.gameObject.tag=="People")&&(move==false))
 				{
 					move = true;
+					return;
 				}
 				else
 				{
 					move = false;
-					return; //Fail
+					return;
 				}
-
 			}
+
 			if (move==true) 
 			{
 				transform.position = Vector3.MoveTowards (transform.position, mousePos, speed * Time.deltaTime);
@@ -94,7 +96,9 @@ public class PlayerBehaviour : MonoBehaviour
 				{
 					Debug.Log ("Action");
 					EventManager.TriggerEvent (new RandomQuizEvents ());
-				});
+					move=true;
+					OnMove=false;
+			});
 		} 
 		else if (e.IsActive==false) 
 		{
@@ -106,9 +110,15 @@ public class PlayerBehaviour : MonoBehaviour
 	{
 		if (c.gameObject.tag=="People") 
 		{
-			move = true;
 			EventManager.TriggerEvent (new PlayerActionEvents (true));
-			OnMove = false;
+		}
+	}
+
+	private void OnTriggerExit2D(Collider2D c)
+	{
+		if (c.gameObject.tag=="People") 
+		{
+			EventManager.TriggerEvent (new PlayerActionEvents (false));
 		}
 	}
 }
