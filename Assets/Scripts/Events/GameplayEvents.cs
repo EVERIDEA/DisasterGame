@@ -15,7 +15,7 @@ public class Quiz
 	public string Question;
 	public List <Answer> ListAnswer = new List<Answer>(); 
 }
-
+	
 public class RandomQuizEvents : GameEvent 
 {
 	
@@ -28,5 +28,25 @@ public class MovePlayerEvents : GameEvent
 	public MovePlayerEvents(bool isMove)
 	{
 		IsMove = isMove;
+	}
+}
+
+public class OnMoveEvents : GameEvent
+{
+	public bool OnMove;
+
+	public OnMoveEvents(bool onMove)
+	{
+		OnMove = onMove;
+	}
+}
+
+public class PlayerActionEvents:GameEvent
+{
+	public bool IsActive;
+
+	public PlayerActionEvents(bool isActive)
+	{
+		IsActive = isActive;
 	}
 }

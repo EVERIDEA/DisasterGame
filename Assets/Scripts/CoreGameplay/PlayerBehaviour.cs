@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections.Generic;
-
+using UnityEngine.UI;
 public class PlayerBehaviour : MonoBehaviour
 {
     [SerializeField]
@@ -10,11 +10,15 @@ public class PlayerBehaviour : MonoBehaviour
 	Vector2 mousePos2d;
 	Vector3 mousePos;
     Rigidbody2D rigidBody; 
-	bool IsMove;
+	bool OnMove=true;
+	public GameObject Action;
+	public Button ActionButton;
 
 	void Awake()
 	{
 		EventManager.AddListener<MovePlayerEvents>(MoveHandler);
+		EventManager.AddListener<OnMoveEvents>(OnMoveHandler);
+		EventManager.AddListener<PlayerActionEvents>(ActionHandler);
 	}
 
     void Start()
@@ -24,7 +28,7 @@ public class PlayerBehaviour : MonoBehaviour
     
     void Update()
     {
-		if (IsMove) 
+		if (OnMove) 
 		{
 			if (Input.GetMouseButtonDown (0)) 
 			{
@@ -69,13 +73,42 @@ public class PlayerBehaviour : MonoBehaviour
 		}
 	}
 
+	void OnMoveHandler(OnMoveEvents e)
+	{
+		if (e.OnMove==false) 
+		{
+			OnMove = false;
+		} 
+		else if (e.OnMove==true) 
+		{
+			OnMove = true;
+		}
+	}
+
+	void ActionHandler(PlayerActionEvents e)
+	{
+		if (e.IsActive==true) 
+		{
+			Action.SetActive (true);
+			ActionButton.onClick.AddListener (delegate
+				{
+					Debug.Log ("Action");
+					EventManager.TriggerEvent (new RandomQuizEvents ());
+				});
+		} 
+		else if (e.IsActive==false) 
+		{
+			Action.SetActive (false);
+		}
+	}
+
 	private void OnTriggerEnter2D(Collider2D c)
 	{
 		if (c.gameObject.tag=="People") 
 		{
-			EventManager.TriggerEvent (new MovePlayerEvents (true));
-			EventManager.TriggerEvent (new RandomQuizEvents ());
-
+			move = true;
+			EventManager.TriggerEvent (new PlayerActionEvents (true));
+			OnMove = false;
 		}
 	}
 }

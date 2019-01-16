@@ -24,6 +24,7 @@ public class QuizManager : MonoBehaviour
 	{
 		IdQuestionPopup=Random.Range (1,11);
 		Debug.Log (IdQuestionPopup);
+		EventManager.TriggerEvent (new PlayerActionEvents (false));
 		for (int i = 0; i < ListQuiz.Count; i++) 
 		{
 			if (IdQuestionPopup==ListQuiz[i].Id) 
@@ -36,6 +37,7 @@ public class QuizManager : MonoBehaviour
 						Debug.Log (AnswerButton[0].GetComponent<AnswerHolder>().AnswerValue.ToString ());
 						QuestionUI.SetActive (false);
 						EventManager.TriggerEvent(new MovePlayerEvents (false));
+						EventManager.TriggerEvent (new OnMoveEvents (true));
 					});
 				Answer2Content.text = ListQuiz [i].ListAnswer [1].AnswerContent;
 				AnswerButton[1].GetComponent<AnswerHolder>().AnswerValue=ListQuiz[i].ListAnswer[1].IsRight;
@@ -44,9 +46,10 @@ public class QuizManager : MonoBehaviour
 						Debug.Log (AnswerButton[1].GetComponent<AnswerHolder>().AnswerValue.ToString ());
 						QuestionUI.SetActive (false);
 						EventManager.TriggerEvent (new MovePlayerEvents (false));
+						EventManager.TriggerEvent (new OnMoveEvents (true));
 					});
-
 			}
+
 			/*
 			if (i > ListQuiz.Count) 
 			{
