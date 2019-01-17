@@ -13,6 +13,12 @@ public class ScoreManager : MonoBehaviour
 	int Saved;
 	int Wrong;
 
+	//Result
+	public GameObject Result;
+	public Text ResultHelpText;
+	public Text ResultSavedText;
+	public Text ResultWrongText;
+
 	private void Awake()
 	{
 		EventManager.AddListener<HelpCountEvents>(HelpCountHandler);
@@ -28,6 +34,18 @@ public class ScoreManager : MonoBehaviour
 		SavedText.text="0";
 		Wrong = 0;
 		WrongText.text="0";
+	}
+
+	private void Update()
+	{
+		if (Help == 0) 
+		{
+			EventManager.TriggerEvent (new OnMoveEvents (false));
+			Result.SetActive (true);
+			ResultHelpText.text= Help.ToString ();
+			ResultSavedText.text = Saved.ToString ();
+			ResultWrongText.text = Wrong.ToString ();
+		}
 	}
 
 	void HelpCountHandler(HelpCountEvents e)

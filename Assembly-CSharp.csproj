@@ -85,6 +85,8 @@
      <Compile Include="Assets\Scripts\CanvasController\CanvasController.cs" />
      <Compile Include="Assets\Scripts\CoreGameplay\AnswerHolder.cs" />
      <Compile Include="Assets\Scripts\CoreGameplay\CameraFollowPlayer.cs" />
+     <Compile Include="Assets\Scripts\CoreGameplay\HelpPopupBehaviour.cs" />
+     <Compile Include="Assets\Scripts\CoreGameplay\HelpPopupManager.cs" />
      <Compile Include="Assets\Scripts\CoreGameplay\PlayerBehaviour.cs" />
      <Compile Include="Assets\Scripts\CoreGameplay\QuizManager.cs" />
      <Compile Include="Assets\Scripts\CoreGameplay\ScoreManager.cs" />
@@ -95,6 +97,7 @@
      <Compile Include="Assets\Scripts\Reuseable\Backeend.cs" />
      <Compile Include="Assets\Scripts\Reuseable\EventManager.cs" />
      <Compile Include="Assets\Scripts\Reuseable\Events.cs" />
+     <Compile Include="Assets\Scripts\Reuseable\Global.cs" />
      <Compile Include="Assets\Scripts\Reuseable\IPooledObject.cs" />
      <Compile Include="Assets\Scripts\Reuseable\ObjectPooled.cs" />
      <Compile Include="Assets\Scripts\Reuseable\ObjectPooler.cs" />

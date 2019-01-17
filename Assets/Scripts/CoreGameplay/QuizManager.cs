@@ -22,7 +22,7 @@ public class QuizManager : MonoBehaviour
 
 	private void QuizRandomizer(RandomQuizEvents e)
 	{
-		IdQuestionPopup=Random.Range (1,11);
+		IdQuestionPopup=Random.Range (1,ListQuiz.Count-1);
 		Debug.Log (IdQuestionPopup);
 		EventManager.TriggerEvent (new PlayerActionEvents (false));
 		for (int i = 0; i < ListQuiz.Count; i++) {
@@ -36,6 +36,8 @@ public class QuizManager : MonoBehaviour
 					QuestionUI.SetActive (false);
 					EventManager.TriggerEvent (new MovePlayerEvents (false));
 					EventManager.TriggerEvent (new OnMoveEvents (true));
+					EventManager.TriggerEvent (new AddRandomPeopleEvents ());
+					EventManager.TriggerEvent (new RemoveRandomPeopleEvents (Global.PeopleId));
 					EventManager.TriggerEvent (new HelpCountEvents (1));
 
 					if (AnswerButton [0].GetComponent<AnswerHolder> ().AnswerValue == true) {
@@ -52,6 +54,8 @@ public class QuizManager : MonoBehaviour
 					QuestionUI.SetActive (false);
 					EventManager.TriggerEvent (new MovePlayerEvents (false));
 					EventManager.TriggerEvent (new OnMoveEvents (true));
+					EventManager.TriggerEvent (new AddRandomPeopleEvents ());
+					EventManager.TriggerEvent (new RemoveRandomPeopleEvents (Global.PeopleId));
 					EventManager.TriggerEvent (new HelpCountEvents (1));
 
 					if (AnswerButton [1].GetComponent<AnswerHolder> ().AnswerValue == true) {

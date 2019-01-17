@@ -8,6 +8,7 @@ public class Answer
 	public bool IsRight;
 
 }
+
 [System.Serializable]
 public class Quiz
 {
@@ -71,12 +72,38 @@ public class SavedCountEvents : GameEvent
 	}
 }
 
-public class WrongCountEvents :GameEvent
+public class WrongCountEvents : GameEvent
 {
 	public int WrongCount;
 
 	public WrongCountEvents(int wrongCount)
 	{
 		WrongCount = wrongCount;
+	}
+}
+
+public class HelpPeopleEvents : GameEvent
+{
+	public int Id;
+	public bool IsActive;
+
+	public HelpPeopleEvents(int id, bool isActive)
+	{
+		Id = id;
+		IsActive = isActive;
+	}
+}
+
+public class AddRandomPeopleEvents:GameEvent
+{
+	
+}
+
+public class RemoveRandomPeopleEvents:GameEvent
+{
+	public int Id;
+	public RemoveRandomPeopleEvents(int id)
+	{
+		Id = id;
 	}
 }

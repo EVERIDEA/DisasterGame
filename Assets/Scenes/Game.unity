@@ -586,7 +586,7 @@ GameObject:
   - component: {fileID: 92138094}
   - component: {fileID: 92138093}
   m_Layer: 0
-  m_Name: People (3)
+  m_Name: People 4
   m_TagString: People
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -612,7 +612,7 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 92138091}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -748,7 +748,7 @@ GameObject:
   - component: {fileID: 219942390}
   - component: {fileID: 219942389}
   m_Layer: 0
-  m_Name: People (1)
+  m_Name: People 2
   m_TagString: People
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -774,7 +774,7 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 219942387}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -922,7 +922,7 @@ GameObject:
   - component: {fileID: 267603515}
   - component: {fileID: 267603514}
   m_Layer: 0
-  m_Name: People (5)
+  m_Name: People 6
   m_TagString: People
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -948,7 +948,7 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 267603512}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -1089,13 +1089,14 @@ GameObject:
   m_Component:
   - component: {fileID: 275444945}
   - component: {fileID: 275444946}
+  - component: {fileID: 275444947}
   m_Layer: 0
   m_Name: HelpPop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &275444945
 Transform:
   m_ObjectHideFlags: 0
@@ -1153,6 +1154,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &275444947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 275444944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3c051d39c7b2f845a31bfff96c31f9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HelpId: 4
 --- !u!1 &289954577
 GameObject:
   m_ObjectHideFlags: 0
@@ -1164,7 +1177,7 @@ GameObject:
   - component: {fileID: 289954580}
   - component: {fileID: 289954579}
   m_Layer: 0
-  m_Name: People (4)
+  m_Name: People 5
   m_TagString: People
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1190,7 +1203,7 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 289954577}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -1432,7 +1445,7 @@ GameObject:
   - component: {fileID: 327983869}
   - component: {fileID: 327983868}
   m_Layer: 0
-  m_Name: People
+  m_Name: People 1
   m_TagString: People
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1458,7 +1471,7 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 327983866}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -2071,13 +2084,14 @@ GameObject:
   m_Component:
   - component: {fileID: 542392039}
   - component: {fileID: 542392040}
+  - component: {fileID: 542392041}
   m_Layer: 0
   m_Name: HelpPop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &542392039
 Transform:
   m_ObjectHideFlags: 0
@@ -2135,6 +2149,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &542392041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 542392038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3c051d39c7b2f845a31bfff96c31f9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HelpId: 6
 --- !u!1 &550711663
 GameObject:
   m_ObjectHideFlags: 0
@@ -2146,7 +2172,7 @@ GameObject:
   - component: {fileID: 550711666}
   - component: {fileID: 550711665}
   m_Layer: 0
-  m_Name: People (2)
+  m_Name: People 3
   m_TagString: People
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2172,7 +2198,7 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 550711663}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -3701,6 +3727,7 @@ GameObject:
   - component: {fileID: 1427500314}
   - component: {fileID: 1427500316}
   - component: {fileID: 1427500317}
+  - component: {fileID: 1427500318}
   m_Layer: 0
   m_Name: '[MANAGER]'
   m_TagString: Untagged
@@ -3849,6 +3876,37 @@ MonoBehaviour:
   HelpText: {fileID: 386061147}
   SavedText: {fileID: 1073177069}
   WrongText: {fileID: 1505397724}
+  Result: {fileID: 2131773695}
+  ResultHelpText: {fileID: 1223961428}
+  ResultSavedText: {fileID: 1588728988}
+  ResultWrongText: {fileID: 2052433313}
+--- !u!114 &1427500318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1427500312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f682f4882aad6ed459c992997c5f93a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _HelpPopUp:
+  - Id: 1
+    HelpObject: {fileID: 1528203480}
+  - Id: 2
+    HelpObject: {fileID: 1742249425}
+  - Id: 3
+    HelpObject: {fileID: 1930456271}
+  - Id: 4
+    HelpObject: {fileID: 275444944}
+  - Id: 5
+    HelpObject: {fileID: 1811131670}
+  - Id: 6
+    HelpObject: {fileID: 542392038}
+  - Id: 7
+    HelpObject: {fileID: 1440101974}
+  RandomPeople: 
 --- !u!1 &1440101974
 GameObject:
   m_ObjectHideFlags: 0
@@ -3858,13 +3916,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1440101975}
   - component: {fileID: 1440101976}
+  - component: {fileID: 1440101977}
   m_Layer: 0
   m_Name: HelpPop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1440101975
 Transform:
   m_ObjectHideFlags: 0
@@ -3922,6 +3981,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1440101977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1440101974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3c051d39c7b2f845a31bfff96c31f9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HelpId: 7
 --- !u!1 &1505397722
 GameObject:
   m_ObjectHideFlags: 0
@@ -4005,13 +4076,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1528203481}
   - component: {fileID: 1528203482}
+  - component: {fileID: 1528203483}
   m_Layer: 0
   m_Name: HelpPop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1528203481
 Transform:
   m_ObjectHideFlags: 0
@@ -4069,6 +4141,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1528203483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1528203480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3c051d39c7b2f845a31bfff96c31f9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HelpId: 1
 --- !u!1 &1588728986
 GameObject:
   m_ObjectHideFlags: 0
@@ -4426,7 +4510,7 @@ GameObject:
   - component: {fileID: 1674781254}
   - component: {fileID: 1674781253}
   m_Layer: 0
-  m_Name: People (6)
+  m_Name: People 7
   m_TagString: People
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4452,7 +4536,7 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1674781251}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -4524,13 +4608,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1742249426}
   - component: {fileID: 1742249427}
+  - component: {fileID: 1742249428}
   m_Layer: 0
   m_Name: HelpPop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1742249426
 Transform:
   m_ObjectHideFlags: 0
@@ -4588,6 +4673,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1742249428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1742249425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3c051d39c7b2f845a31bfff96c31f9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HelpId: 2
 --- !u!1 &1794485409
 GameObject:
   m_ObjectHideFlags: 0
@@ -4633,13 +4730,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1811131671}
   - component: {fileID: 1811131672}
+  - component: {fileID: 1811131673}
   m_Layer: 0
   m_Name: HelpPop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1811131671
 Transform:
   m_ObjectHideFlags: 0
@@ -4697,6 +4795,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1811131673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1811131670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3c051d39c7b2f845a31bfff96c31f9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HelpId: 5
 --- !u!1 &1854965832
 GameObject:
   m_ObjectHideFlags: 0
@@ -4844,13 +4954,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1930456272}
   - component: {fileID: 1930456273}
+  - component: {fileID: 1930456274}
   m_Layer: 0
   m_Name: HelpPop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1930456272
 Transform:
   m_ObjectHideFlags: 0
@@ -4908,6 +5019,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1930456274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1930456271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3c051d39c7b2f845a31bfff96c31f9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HelpId: 3
 --- !u!1 &1972829816
 GameObject:
   m_ObjectHideFlags: 0
@@ -4949,7 +5072,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

@@ -14,6 +14,7 @@ public class PlayerBehaviour : MonoBehaviour
 	public GameObject Action;
 	public Button ActionButton;
 
+
 	void Awake()
 	{
 		EventManager.AddListener<MovePlayerEvents>(MoveHandler);
@@ -108,10 +109,12 @@ public class PlayerBehaviour : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D c)
 	{
-		if (c.gameObject.tag=="People") 
+		if (c.gameObject.tag=="People")
 		{
 			EventManager.TriggerEvent (new PlayerActionEvents (true));
+			Global.PeopleId = c.gameObject.GetComponentInChildren<HelpPopupBehaviour> ().HelpId;
 		}
+
 	}
 
 	private void OnTriggerExit2D(Collider2D c)
@@ -119,6 +122,7 @@ public class PlayerBehaviour : MonoBehaviour
 		if (c.gameObject.tag=="People") 
 		{
 			EventManager.TriggerEvent (new PlayerActionEvents (false));
+			Global.PeopleId = 0;
 		}
 	}
 }
