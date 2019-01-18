@@ -9,7 +9,7 @@ public class GameManager : GameStateMachine<GameManager>
 
     public enum States
     {
-        Intro, Pause, Playing, Result
+        Intro, Pause, Playing, Result, Restart
     }
 
     private static GameManager _instance;
@@ -52,6 +52,17 @@ public class GameManager : GameStateMachine<GameManager>
             case "game.home":
                 Application.LoadLevel("Menu");
                 break;
+			case "game.pause":
+				ChangeState (States.Pause);
+				break;
+			case "game.play":
+				ChangeState (States.Playing);
+				break;
+			case "game.restart":
+				Debug.Log ("Restart");
+				ChangeState (States.Restart);
+				break;
+			    
             default:
                 ChangeToPreviousState();
                 break;
