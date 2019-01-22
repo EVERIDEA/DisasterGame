@@ -8,11 +8,11 @@ public class HelpPopupBehaviour : MonoBehaviour
 
 	private void OnEnable()
 	{
-		this.transform.parent.gameObject.GetComponent<BoxCollider2D>().enabled=true;
+		this.transform.parent.gameObject.GetComponent<BoxCollider>().enabled=true;
 	}
 
 	private void OnDisable()
 	{
-		this.transform.parent.gameObject.GetComponent<BoxCollider2D>().enabled=false;
+		this.transform.parent.gameObject.GetComponent<BoxCollider>().enabled=false;
 	}
 }

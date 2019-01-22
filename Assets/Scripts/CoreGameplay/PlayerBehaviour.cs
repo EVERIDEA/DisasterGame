@@ -2,6 +2,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.AI;
 public class PlayerBehaviour : MonoBehaviour
 {
     [SerializeField]
@@ -13,7 +14,8 @@ public class PlayerBehaviour : MonoBehaviour
 	bool OnMove=true;
 	public GameObject Action;
 	public Button ActionButton;
-
+	private NavMeshAgent mNavMeshAgent;
+	private bool mRunning;
 
 	void Awake()
 	{
@@ -24,43 +26,34 @@ public class PlayerBehaviour : MonoBehaviour
 
     void Start()
     {
-        rigidBody = GetComponent<Rigidbody2D>();
+		mNavMeshAgent = GetComponent<NavMeshAgent> ();
     }
     
     void Update()
     {
-		if (OnMove) 
+		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+
+		RaycastHit hit;
+
+		if (Input.GetMouseButton (0)) 
 		{
-			if (Input.GetMouseButtonDown (0)) 
+			if (Physics.Raycast (ray,out hit, 100))
 			{
-				mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-				Debug.Log(mousePos);
-				mousePos2d = new Vector2(mousePos.x, mousePos.y);
-				mousePos.z = transform.position.z;
-				RaycastHit2D hit = Physics2D.Raycast(mousePos2d, Vector2.zero);
-				if (hit.transform == null) 
-				{
-					move = true;
-					return;
-				}
-				if ((hit.transform.gameObject.tag=="People")&&(move==false))
-				{
-					move = true;
-					return;
-				}
-				else
-				{
-					move = false;
-					return;
-				}
+				mNavMeshAgent.destination = hit.point;
+				Debug.Log (hit.point);
 			}
-
-			if (move==true) 
-			{
-				transform.position = Vector3.MoveTowards (transform.position, mousePos, speed * Time.deltaTime);
-			}
-
 		}
+
+		if (mNavMeshAgent.remainingDistance<=mNavMeshAgent.stoppingDistance) 
+		{
+			mRunning = false;
+		} 
+		else 
+		{
+			mRunning = true;	
+		}
+
+		transform.rotation = Quaternion.identity;
 
     }
 
@@ -107,7 +100,7 @@ public class PlayerBehaviour : MonoBehaviour
 		}
 	}
 
-	private void OnTriggerEnter2D(Collider2D c)
+	private void OnTriggerEnter(Collider c)
 	{
 		if (c.gameObject.tag=="People")
 		{
@@ -117,7 +110,7 @@ public class PlayerBehaviour : MonoBehaviour
 
 	}
 
-	private void OnTriggerExit2D(Collider2D c)
+	private void OnTriggerExit(Collider c)
 	{
 		if (c.gameObject.tag=="People") 
 		{
