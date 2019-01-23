@@ -34,11 +34,10 @@ public class QuizManager : MonoBehaviour
 				AnswerButton [0].onClick.AddListener (delegate {
 					Debug.Log (AnswerButton [0].GetComponent<AnswerHolder> ().AnswerValue.ToString ());
 					QuestionUI.SetActive (false);
-					EventManager.TriggerEvent (new MovePlayerEvents (false));
-					EventManager.TriggerEvent (new OnMoveEvents (true));
 					EventManager.TriggerEvent (new AddRandomPeopleEvents ());
 					EventManager.TriggerEvent (new RemoveRandomPeopleEvents (Global.PeopleId));
 					EventManager.TriggerEvent (new HelpCountEvents (1));
+					EventManager.TriggerEvent (new PlayerMoveEvents (true));
 
 					if (AnswerButton [0].GetComponent<AnswerHolder> ().AnswerValue == true) {
 						EventManager.TriggerEvent (new SavedCountEvents (1));
@@ -52,11 +51,10 @@ public class QuizManager : MonoBehaviour
 				AnswerButton [1].onClick.AddListener (delegate {
 					Debug.Log (AnswerButton [1].GetComponent<AnswerHolder> ().AnswerValue.ToString ());
 					QuestionUI.SetActive (false);
-					EventManager.TriggerEvent (new MovePlayerEvents (false));
-					EventManager.TriggerEvent (new OnMoveEvents (true));
 					EventManager.TriggerEvent (new AddRandomPeopleEvents ());
 					EventManager.TriggerEvent (new RemoveRandomPeopleEvents (Global.PeopleId));
 					EventManager.TriggerEvent (new HelpCountEvents (1));
+					EventManager.TriggerEvent (new PlayerMoveEvents (true));
 
 					if (AnswerButton [1].GetComponent<AnswerHolder> ().AnswerValue == true) {
 						EventManager.TriggerEvent (new SavedCountEvents (1));

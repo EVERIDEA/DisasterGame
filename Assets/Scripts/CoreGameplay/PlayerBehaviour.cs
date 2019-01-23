@@ -3,25 +3,24 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.AI;
+using UnityEngine.EventSystems;
 public class PlayerBehaviour : MonoBehaviour
 {
     [SerializeField]
     float speed; 
-	bool move=false;
 	Vector2 mousePos2d;
 	Vector3 mousePos;
     Rigidbody2D rigidBody; 
-	bool OnMove=true;
 	public GameObject Action;
 	public Button ActionButton;
 	private NavMeshAgent mNavMeshAgent;
 	private bool mRunning;
+	private bool IsMove=true;
 
 	void Awake()
 	{
-		EventManager.AddListener<MovePlayerEvents>(MoveHandler);
-		EventManager.AddListener<OnMoveEvents>(OnMoveHandler);
 		EventManager.AddListener<PlayerActionEvents>(ActionHandler);
+		EventManager.AddListener<PlayerMoveEvents>(MoveHandler);
 	}
 
     void Start()
@@ -32,71 +31,64 @@ public class PlayerBehaviour : MonoBehaviour
     void Update()
     {
 		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-
 		RaycastHit hit;
-
-		if (Input.GetMouseButton (0)) 
-		{
-			if (Physics.Raycast (ray,out hit, 100))
-			{
-				mNavMeshAgent.destination = hit.point;
-				Debug.Log (hit.point);
-			}
-		}
-
-		if (mNavMeshAgent.remainingDistance<=mNavMeshAgent.stoppingDistance) 
-		{
-			mRunning = false;
-		} 
-		else 
-		{
-			mRunning = true;	
-		}
-
 		transform.rotation = Quaternion.identity;
+		if (IsMove.Equals (true)) 
+		{
+			if (Input.GetMouseButton (0)) 
+			{
+				if (EventSystem.current.IsPointerOverGameObject())
+				{
+					return;
+				}
 
+				if (Physics.Raycast (ray,out hit, 100))
+				{
+					mNavMeshAgent.destination = hit.point;
+					Debug.Log (hit.point);
+				}
+			}
+
+				if (mNavMeshAgent.remainingDistance<=mNavMeshAgent.stoppingDistance) 
+				{
+					mRunning = false;
+				} 
+				else 
+				{
+					mRunning = true;	
+				}
+		}
     }
 
-	void MoveHandler(MovePlayerEvents e)
-	{
-		if (e.IsMove==true) 
-		{
-			move = true;
-		} 
-		else if (e.IsMove==false) 
-		{
-			move = false;
-		}
-	}
 
-	void OnMoveHandler(OnMoveEvents e)
-	{
-		if (e.OnMove==false) 
-		{
-			OnMove = false;
-		} 
-		else if (e.OnMove==true) 
-		{
-			OnMove = true;
-		}
-	}
 
 	void ActionHandler(PlayerActionEvents e)
 	{
 		if (e.IsActive==true) 
 		{
 			Action.SetActive (true);
+			mRunning = false;
 			ActionButton.onClick.AddListener (delegate
 				{
+					IsMove=false;
 					Debug.Log ("Action");
 					EventManager.TriggerEvent (new RandomQuizEvents ());
-					move=true;
-					OnMove=false;
 			});
 		} 
 		else if (e.IsActive==false) 
 		{
 			Action.SetActive (false);
+		}
+	}
+
+	void MoveHandler(PlayerMoveEvents e)
+	{
+		if (e.Move) 
+		{
+			IsMove = true;
+		} else 
+		{
+			IsMove = false;	
 		}
 	}
 

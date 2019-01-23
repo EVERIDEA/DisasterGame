@@ -21,27 +21,7 @@ public class RandomQuizEvents : GameEvent
 {
 	
 }
-
-public class MovePlayerEvents : GameEvent
-{
-	public bool IsMove;
-
-	public MovePlayerEvents(bool isMove)
-	{
-		IsMove = isMove;
-	}
-}
-
-public class OnMoveEvents : GameEvent
-{
-	public bool OnMove;
-
-	public OnMoveEvents(bool onMove)
-	{
-		OnMove = onMove;
-	}
-}
-
+	
 public class PlayerActionEvents:GameEvent
 {
 	public bool IsActive;
@@ -105,5 +85,14 @@ public class RemoveRandomPeopleEvents:GameEvent
 	public RemoveRandomPeopleEvents(int id)
 	{
 		Id = id;
+	}
+}
+
+public class PlayerMoveEvents:GameEvent
+{
+	public bool Move;
+	public PlayerMoveEvents(bool move)
+	{
+		Move = move;
 	}
 }

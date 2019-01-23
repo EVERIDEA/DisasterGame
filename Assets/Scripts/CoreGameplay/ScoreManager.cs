@@ -40,7 +40,6 @@ public class ScoreManager : MonoBehaviour
 	{
 		if (Help == 0) 
 		{
-			EventManager.TriggerEvent (new OnMoveEvents (false));
 			Result.SetActive (true);
 			ResultHelpText.text= Help.ToString ();
 			ResultSavedText.text = Saved.ToString ();
