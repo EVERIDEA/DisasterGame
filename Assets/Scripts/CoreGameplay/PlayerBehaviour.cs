@@ -33,7 +33,7 @@ public class PlayerBehaviour : MonoBehaviour
 		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 		RaycastHit hit;
 		transform.rotation = Quaternion.identity;
-		if (IsMove.Equals (true)) 
+		if (IsMove=true) 
 		{
 			if (Input.GetMouseButton (0)) 
 			{
@@ -71,6 +71,7 @@ public class PlayerBehaviour : MonoBehaviour
 			ActionButton.onClick.AddListener (delegate
 				{
 					IsMove=false;
+					EventManager.TriggerEvent (new PeopleMoveEvents (false));
 					Debug.Log ("Action");
 					EventManager.TriggerEvent (new RandomQuizEvents ());
 			});

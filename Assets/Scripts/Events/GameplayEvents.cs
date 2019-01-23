@@ -96,3 +96,12 @@ public class PlayerMoveEvents:GameEvent
 		Move = move;
 	}
 }
+
+public class PeopleMoveEvents:GameEvent
+{
+	public bool Wander;
+	public PeopleMoveEvents(bool wander)
+	{
+		Wander = wander;
+	}
+}

@@ -89,6 +89,7 @@
      <Compile Include="Assets\Scripts\CoreGameplay\CameraFollowPlayer.cs" />
      <Compile Include="Assets\Scripts\CoreGameplay\HelpPopupBehaviour.cs" />
      <Compile Include="Assets\Scripts\CoreGameplay\HelpPopupManager.cs" />
+     <Compile Include="Assets\Scripts\CoreGameplay\PeopleBehaviour.cs" />
      <Compile Include="Assets\Scripts\CoreGameplay\PlayerBehaviour.cs" />
      <Compile Include="Assets\Scripts\CoreGameplay\QuizManager.cs" />
      <Compile Include="Assets\Scripts\CoreGameplay\ScoreManager.cs" />
