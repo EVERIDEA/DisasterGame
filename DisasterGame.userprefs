@@ -2,10 +2,12 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CoreGameplay\PeopleBehaviour.cs">
     <Files>
-      <File FileName="Assets\Scripts\CoreGameplay\PeopleBehaviour.cs" Line="39" Column="2" />
-      <File FileName="Assets\Scripts\Events\GameplayEvents.cs" Line="105" Column="19" />
-      <File FileName="Assets\Scripts\CoreGameplay\PlayerBehaviour.cs" Line="67" Column="25" NotebookId="1" />
-      <File FileName="Assets\Scripts\CoreGameplay\QuizManager.cs" Line="59" Column="52" NotebookId="1" />
+      <File FileName="Assets\Scripts\CoreGameplay\PeopleBehaviour.cs" Line="84" Column="3" />
+      <File FileName="Assets\Scripts\Events\GameplayEvents.cs" Line="85" Column="9" />
+      <File FileName="Assets\Scripts\CoreGameplay\HelpPopupBehaviour.cs" Line="20" Column="78" />
+      <File FileName="Assets\Scripts\CoreGameplay\PlayerBehaviour.cs" Line="5" Column="20" NotebookId="1" />
+      <File FileName="Assets\Scripts\CoreGameplay\QuizManager.cs" Line="51" Column="16" NotebookId="1" />
+      <File FileName="Assets\Scripts\CoreGameplay\HelpPopupManager.cs" Line="17" Column="51" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

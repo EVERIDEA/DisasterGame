@@ -87,7 +87,8 @@ public class PlayerBehaviour : MonoBehaviour
 		if (e.Move) 
 		{
 			IsMove = true;
-		} else 
+		} 
+		else 
 		{
 			IsMove = false;	
 		}
@@ -99,6 +100,7 @@ public class PlayerBehaviour : MonoBehaviour
 		{
 			EventManager.TriggerEvent (new PlayerActionEvents (true));
 			Global.PeopleId = c.gameObject.GetComponentInChildren<HelpPopupBehaviour> ().HelpId;
+			c.gameObject.GetComponent<NavMeshAgent> ().isStopped = true;
 		}
 
 	}
@@ -109,6 +111,7 @@ public class PlayerBehaviour : MonoBehaviour
 		{
 			EventManager.TriggerEvent (new PlayerActionEvents (false));
 			Global.PeopleId = 0;
+			c.gameObject.GetComponent<NavMeshAgent> ().isStopped = false;
 		}
 	}
 }

@@ -76,7 +76,8 @@ public class PeopleBehaviour : MonoBehaviour
 		if (e.Wander) 
 		{
 			IsWander = true;
-		} else 
+		} 
+		else 
 		{
 			IsWander = false;	
 		}
