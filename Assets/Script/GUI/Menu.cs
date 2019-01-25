@@ -31,9 +31,10 @@ public class Menu : GameStateMachine<Menu>
 
     private void OnSignalReceived(Dictionary<string, object> eventParam)
     {
-        var action = (String)eventParam["action"];
+		var action = (String)eventParam["action"];
+		var value = action.Split(new[] { "#" }, StringSplitOptions.RemoveEmptyEntries);
 
-        switch (action) {
+        switch (value[0]) {
             case "menu.play":
                 ChangeState(States.LevelSelect);
                 break;
@@ -50,9 +51,19 @@ public class Menu : GameStateMachine<Menu>
                 Application.Quit();
                 Debug.Log("QUIT");
                 break;
-            case "level.select":
+			case "level.select":
+                if (value[1] == "1")
+                {
+                    Debug.Log("LEPEL 1");
+                    Global.LevelSelect = 1;
+                }
+                if (value[1]== "2")
+                {
+                    Debug.Log("LEPEL 2");
+                    Global.LevelSelect = 2;
+                }
                 Application.LoadLevel("Game");
-                Debug.Log("Open Level 1");
+                Debug.Log("Open Level");
                 break;
             default:
                 ChangeToPreviousState();

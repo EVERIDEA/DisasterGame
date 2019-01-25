@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311912, g: 0.3807398, b: 0.3587271, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1193,7 +1193,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &292673321
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1884,7 +1884,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c5d5daa30c5842038a8c094a91d460a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AllowDebug: 1
 --- !u!114 &431483248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2615,6 +2614,7 @@ GameObject:
   - component: {fileID: 728028241}
   - component: {fileID: 728028240}
   - component: {fileID: 728028242}
+  - component: {fileID: 728028243}
   m_Layer: 5
   m_Name: BG Level
   m_TagString: Untagged
@@ -2660,7 +2660,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: a3ff81f21b3878a418e885ca254b3ffe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 99659cd6fbcffbe4f9e0da30028ae0bd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2715,6 +2715,18 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &728028243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 728028238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7055b21ad3b72ca44b71fb1358fbdd15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Identifier: button.menuui:action=level.select#2
 --- !u!1 &736823535
 GameObject:
   m_ObjectHideFlags: 0
@@ -4557,7 +4569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7055b21ad3b72ca44b71fb1358fbdd15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Identifier: button.menuui:action=level.select,value=1
+  Identifier: button.menuui:action=level.select#1
 --- !u!1 &1418426168
 GameObject:
   m_ObjectHideFlags: 0

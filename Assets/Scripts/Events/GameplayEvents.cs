@@ -105,3 +105,15 @@ public class PeopleMoveEvents:GameEvent
 		Wander = wander;
 	}
 }
+
+public class LevelEvents:GameEvent
+{
+	public int Id;
+	public bool IsActive;
+
+	public LevelEvents(int id, bool isActive)
+	{
+		Id = id;
+		IsActive = isActive;
+	}
+}

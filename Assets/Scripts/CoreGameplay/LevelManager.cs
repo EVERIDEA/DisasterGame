@@ -2,15 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelManager : MonoBehaviour {
+[System.Serializable]
+public class Level
+{
+	public int Id;
+	public GameObject LevelObject;
+}
 
-	// Use this for initialization
-	void Start () {
-		
+public class LevelManager : MonoBehaviour 
+{
+	[SerializeField]
+	Level[] _Level;
+	Dictionary<int,GameObject> _LevelData = new Dictionary<int, GameObject>();
+
+	private void Awake()
+	{
+		EventManager.AddListener<LevelEvents>(LevelHandler);
+
+		for (int i = 0; i < _Level.Length; i++) 
+		{
+			_LevelData.Add (_Level[i].Id, _Level[i].LevelObject);
+		}
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+    private void Start()
+    {
+        EventManager.TriggerEvent(new LevelEvents(Global.LevelSelect, true));
+    }
+
+    void LevelHandler(LevelEvents e)
+	{
+		_LevelData [e.Id].SetActive (e.IsActive);
 	}
 }

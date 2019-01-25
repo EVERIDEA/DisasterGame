@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -3465,7 +3465,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &806479941
 Transform:
   m_ObjectHideFlags: 0
@@ -6487,6 +6487,7 @@ GameObject:
   - component: {fileID: 1427500318}
   - component: {fileID: 1427500319}
   - component: {fileID: 1427500320}
+  - component: {fileID: 1427500321}
   m_Layer: 0
   m_Name: '[MANAGER]'
   m_TagString: Untagged
@@ -6706,6 +6707,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsActive: 0
   resultUI: {fileID: 2131773695}
+--- !u!114 &1427500321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1427500312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b97feb62475dca542bd75d6db1533b25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Level:
+  - Id: 1
+    LevelObject: {fileID: 806479940}
+  - Id: 2
+    LevelObject: {fileID: 1524136170}
 --- !u!1 &1504797991
 GameObject:
   m_ObjectHideFlags: 0

@@ -35,7 +35,7 @@ public class HelpPopupManager : MonoBehaviour
 
 	void SetPeopleHelpPopUp()
 	{
-		//Randomize Help Pop up At i-People without repeatation
+		//Randomize Set Help Pop up At i-People without repeatation
 		for (int i = 0; i < 3; i++) 
 		{
 			int RandomizePeople = Random.Range (1, _HelpPopUpData.Count-1);
@@ -50,6 +50,7 @@ public class HelpPopupManager : MonoBehaviour
 
 	void AddPeopleHelpPopUp(AddRandomPeopleEvents e)
 	{
+		//Randomize Add Help Pop up At i-People without repeatation
 		for (int i = 0; i < 1; i++) 
 		{
 			int RandomizePeople = Random.Range (1, _HelpPopUpData.Count-1);
@@ -64,6 +65,7 @@ public class HelpPopupManager : MonoBehaviour
 
 	void RemovePeopleHelpPopUp(RemoveRandomPeopleEvents e)
 	{
+		//Remove i-People when has been helped
 		EventManager.TriggerEvent (new HelpPeopleEvents (e.Id,false));
 		RandomPeople.Remove(e.Id);
 	}
@@ -73,5 +75,13 @@ public class HelpPopupManager : MonoBehaviour
 	{
 		_HelpPopUpData [e.Id].SetActive(e.IsActive);
 	}
-		
+
+	void EndGame()
+	{
+		RandomPeople.Clear();
+		for (int i = 0; i < _HelpPopUpData.Count; i++) 
+		{
+			EventManager.TriggerEvent (new HelpPeopleEvents (i,false));
+		}
+	}
 }

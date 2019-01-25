@@ -65,4 +65,14 @@ public class ScoreManager : MonoBehaviour
 		WrongText.text = Wrong.ToString ();
 	}
 
+	void Restart()
+	{
+		Help = 10;
+		HelpText.text="10";
+		Saved = 0;
+		SavedText.text="0";
+		Wrong = 0;
+		WrongText.text="0";
+	}
+
 }
