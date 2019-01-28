@@ -17,7 +17,7 @@ public class QuizManager : MonoBehaviour
 
 	private void Awake()
 	{
-		EventManager.AddListener<RandomQuizEvents>(QuizRandomizer);
+
 	}
 
 	private void QuizRandomizer(RandomQuizEvents e)
@@ -69,4 +69,14 @@ public class QuizManager : MonoBehaviour
 			QuestionUI.SetActive (true);
 		}
 	}
+
+    private void OnEnable()
+    {
+        EventManager.AddListener<RandomQuizEvents>(QuizRandomizer);
+    }
+
+    private void OnDisable()
+    {
+        EventManager.RemoveAllListeners();
+    }
 }

@@ -279,6 +279,7 @@
     <Compile Include="Assets\Script\GUI\LevelSelect.cs" />
     <Compile Include="Assets\Script\GUI\Logo.cs" />
     <Compile Include="Assets\Script\GUI\Menu.cs" />
+    <Compile Include="Assets\Script\GUI\Next.cs" />
     <Compile Include="Assets\Script\GUI\Options.cs" />
     <Compile Include="Assets\Script\GUI\Pause.cs" />
     <Compile Include="Assets\Script\GUI\Restart.cs" />
@@ -308,6 +309,7 @@
     <Compile Include="Assets\Scripts\CoreGameplay\HelpPopupManager.cs" />
     <Compile Include="Assets\Scripts\CoreGameplay\LevelManager.cs" />
     <Compile Include="Assets\Scripts\CoreGameplay\PeopleBehaviour.cs" />
+    <Compile Include="Assets\Scripts\CoreGameplay\PeopleStayBehaviour.cs" />
     <Compile Include="Assets\Scripts\CoreGameplay\PlayerBehaviour.cs" />
     <Compile Include="Assets\Scripts\CoreGameplay\QuizManager.cs" />
     <Compile Include="Assets\Scripts\CoreGameplay\ScoreManager.cs" />

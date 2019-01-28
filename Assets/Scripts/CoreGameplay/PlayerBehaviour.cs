@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class PlayerBehaviour : MonoBehaviour
 {
     [SerializeField]
-    float speed; 
+    //float speed; 
 	Vector2 mousePos2d;
 	Vector3 mousePos;
     Rigidbody2D rigidBody; 
@@ -19,8 +19,7 @@ public class PlayerBehaviour : MonoBehaviour
 
 	void Awake()
 	{
-		EventManager.AddListener<PlayerActionEvents>(ActionHandler);
-		EventManager.AddListener<PlayerMoveEvents>(MoveHandler);
+
 	}
 
     void Start()
@@ -37,7 +36,7 @@ public class PlayerBehaviour : MonoBehaviour
 		{
 			if (Input.GetMouseButton (0)) 
 			{
-				if (EventSystem.current.IsPointerOverGameObject())
+				if ((EventSystem.current.IsPointerOverGameObject())||(EventSystem.current.currentSelectedGameObject!=null))
 				{
 					return;
 				}
@@ -94,7 +93,18 @@ public class PlayerBehaviour : MonoBehaviour
 		}
 	}
 
-	private void OnTriggerEnter(Collider c)
+    private void OnEnable()
+    {
+        EventManager.AddListener<PlayerActionEvents>(ActionHandler);
+        EventManager.AddListener<PlayerMoveEvents>(MoveHandler);
+    }
+
+    private void OnDisable()
+    {
+        EventManager.RemoveAllListeners();
+    }
+
+    private void OnTriggerEnter(Collider c)
 	{
 		if (c.gameObject.tag=="People")
 		{

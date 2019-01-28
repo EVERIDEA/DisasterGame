@@ -11,12 +11,13 @@ public class Restart : StateComponentBase<GameManager>
 	public override void EnterState()
 	{
 		resultUI.SetActive (false);
-		Debug.Log ("Keluar Ga");
-	}
+        Application.LoadLevel("Game");
+    }
+
 	public override void ExitState()
 	{
-
-	}
+        Time.timeScale = 1;
+    }
 
 	private void Update()
 	{

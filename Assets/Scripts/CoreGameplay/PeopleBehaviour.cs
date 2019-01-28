@@ -14,14 +14,21 @@ public class PeopleBehaviour : MonoBehaviour
 	private Vector3 wanderTarget;
 	private bool IsWander=true;
 
-	void OnEnable()
+	private void OnEnable()
 	{
-		SetInitialReference ();
-	}
+        EventManager.AddListener<PeopleMoveEvents>(PeopleMoveHandler);
+        SetInitialReference ();
+    }
 
-	private void Awake()
+    private void OnDisable()
+    {
+        EventManager.RemoveAllListeners();
+    }
+
+
+    private void Awake()
 	{
-		EventManager.AddListener<PeopleMoveEvents>(PeopleMoveHandler);
+		
 	}
 
 	private void Update()
@@ -70,6 +77,7 @@ public class PeopleBehaviour : MonoBehaviour
 			return false;
 		}
 	}
+
 
 	void PeopleMoveHandler(PeopleMoveEvents e)
 	{

@@ -17,13 +17,21 @@ public class LevelManager : MonoBehaviour
 
 	private void Awake()
 	{
-		EventManager.AddListener<LevelEvents>(LevelHandler);
-
-		for (int i = 0; i < _Level.Length; i++) 
+        for (int i = 0; i < _Level.Length; i++) 
 		{
-			_LevelData.Add (_Level[i].Id, _Level[i].LevelObject);
+            _LevelData.Add (_Level[i].Id, _Level[i].LevelObject);
 		}
 	}
+
+    private void OnEnable()
+    {
+        EventManager.AddListener<LevelEvents>(LevelHandler);
+    }
+
+    private void OnDisable()
+    {
+        EventManager.RemoveAllListeners();
+    }
 
     private void Start()
     {

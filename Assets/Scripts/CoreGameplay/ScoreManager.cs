@@ -21,9 +21,7 @@ public class ScoreManager : MonoBehaviour
 
 	private void Awake()
 	{
-		EventManager.AddListener<HelpCountEvents>(HelpCountHandler);
-		EventManager.AddListener<SavedCountEvents>(SavedCountHandler);
-		EventManager.AddListener<WrongCountEvents>(WrongCountHandler);
+		
 	}
 
 	private void Start()
@@ -65,7 +63,19 @@ public class ScoreManager : MonoBehaviour
 		WrongText.text = Wrong.ToString ();
 	}
 
-	void Restart()
+    private void OnEnable()
+    {
+        EventManager.AddListener<HelpCountEvents>(HelpCountHandler);
+        EventManager.AddListener<SavedCountEvents>(SavedCountHandler);
+        EventManager.AddListener<WrongCountEvents>(WrongCountHandler);
+    }
+
+    private void OnDisable()
+    {
+        EventManager.RemoveAllListeners();
+    }
+
+    void Restart()
 	{
 		Help = 10;
 		HelpText.text="10";

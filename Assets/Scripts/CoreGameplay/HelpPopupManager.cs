@@ -60,10 +60,6 @@ public class HelpPopupManager : MonoBehaviour
 		
 	private void Awake()
 	{
-		EventManager.AddListener<HelpPeopleEvents>(HelpPeopleHandler);
-		EventManager.AddListener<AddRandomPeopleEvents> (AddPeopleHelpPopUp);
-		EventManager.AddListener<RemoveRandomPeopleEvents>(RemovePeopleHelpPopUp);
-
 		//LV1
 
 		for (int i = 0; i < _HelpPopUpLV1.Length; i++) 
@@ -135,7 +131,19 @@ public class HelpPopupManager : MonoBehaviour
 		}
 	}
 
-	void SetPeopleHelpPopUp()
+    private void OnEnable()
+    {
+        EventManager.AddListener<HelpPeopleEvents>(HelpPeopleHandler);
+        EventManager.AddListener<AddRandomPeopleEvents>(AddPeopleHelpPopUp);
+        EventManager.AddListener<RemoveRandomPeopleEvents>(RemovePeopleHelpPopUp);
+    }
+
+    private void OnDisable()
+    {
+        EventManager.RemoveAllListeners();
+    }
+
+    void SetPeopleHelpPopUp()
 	{
 		//Randomize Set Help Pop up At i-People without repeatation
 		for (int i = 0; i < 3; i++) 
@@ -430,6 +438,7 @@ public class HelpPopupManager : MonoBehaviour
 		}
 	}
 
+    /*
 	void EndGame()
 	{
 		RandomPeople.Clear();
@@ -515,4 +524,5 @@ public class HelpPopupManager : MonoBehaviour
 		}
 			
 	}
+    */
 }
