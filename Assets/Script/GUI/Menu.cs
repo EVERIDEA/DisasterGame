@@ -54,14 +54,64 @@ public class Menu : GameStateMachine<Menu>
 			case "level.select":
                 if (value[1] == "1")
                 {
-                    Debug.Log("LEPEL 1");
+                    Debug.Log("LEVEL 1");
                     Global.LevelSelect = 1;
                 }
+
                 if (value[1]== "2")
                 {
-                    Debug.Log("LEPEL 2");
+                    Debug.Log("LEVEL 2");
                     Global.LevelSelect = 2;
                 }
+
+				if (value[1] == "3")
+				{
+					Debug.Log("LEVEL 3");
+					Global.LevelSelect = 3;
+				}
+
+				if (value[1]== "4")
+				{
+					Debug.Log("LEVEL 4");
+					Global.LevelSelect = 4;
+				}
+
+				if (value[1] == "5")
+				{
+					Debug.Log("LEVEL 5");
+					Global.LevelSelect = 5;
+				}
+
+				if (value[1]== "6")
+				{
+					Debug.Log("LEVEL 6");
+					Global.LevelSelect = 6;
+				}
+
+				if (value[1] == "7")
+				{
+					Debug.Log("LEVEL 7");
+					Global.LevelSelect = 7;
+				}
+
+				if (value[1]== "8")
+				{
+					Debug.Log("LEVEL 8");
+					Global.LevelSelect = 8;
+				}
+
+				if (value[1] == "9")
+				{
+					Debug.Log("LEVEL 9");
+					Global.LevelSelect = 9;
+				}
+
+				if (value[1]== "10")
+				{
+					Debug.Log("LEVEL 10");
+					Global.LevelSelect = 10;
+				}
+
                 Application.LoadLevel("Game");
                 Debug.Log("Open Level");
                 break;
