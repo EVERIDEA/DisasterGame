@@ -117,3 +117,8 @@ public class LevelEvents:GameEvent
 		IsActive = isActive;
 	}
 }
+
+public class ResultEvents : GameEvent
+{
+
+}

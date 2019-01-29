@@ -38,10 +38,7 @@ public class ScoreManager : MonoBehaviour
 	{
 		if (Help == 0) 
 		{
-			Result.SetActive (true);
-			ResultHelpText.text= Help.ToString ();
-			ResultSavedText.text = Saved.ToString ();
-			ResultWrongText.text = Wrong.ToString ();
+            EventManager.TriggerEvent(new ResultEvents());
 		}
 	}
 
@@ -68,6 +65,7 @@ public class ScoreManager : MonoBehaviour
         EventManager.AddListener<HelpCountEvents>(HelpCountHandler);
         EventManager.AddListener<SavedCountEvents>(SavedCountHandler);
         EventManager.AddListener<WrongCountEvents>(WrongCountHandler);
+        EventManager.AddListener<ResultEvents>(ResultHandler);
     }
 
     private void OnDisable()
@@ -75,14 +73,11 @@ public class ScoreManager : MonoBehaviour
         EventManager.RemoveAllListeners();
     }
 
-    void Restart()
-	{
-		Help = 10;
-		HelpText.text="10";
-		Saved = 0;
-		SavedText.text="0";
-		Wrong = 0;
-		WrongText.text="0";
-	}
-
+    void ResultHandler(ResultEvents e)
+    {
+        Result.SetActive(true);
+        ResultHelpText.text = Help.ToString();
+        ResultSavedText.text = Saved.ToString();
+        ResultWrongText.text = Wrong.ToString();
+    }
 }
