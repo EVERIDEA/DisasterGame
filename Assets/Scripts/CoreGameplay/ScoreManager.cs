@@ -78,7 +78,7 @@ public class ScoreManager : MonoBehaviour
         EventManager.RemoveAllListeners();
     }
 
-    /*
+    /* Aturan Scoring Sementara
      * Kuis
      * 
      * Jumlah pertanyaan = 10
