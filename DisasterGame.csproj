@@ -283,7 +283,6 @@
     <Compile Include="Assets\Script\GUI\Options.cs" />
     <Compile Include="Assets\Script\GUI\Pause.cs" />
     <Compile Include="Assets\Script\GUI\Restart.cs" />
-    <Compile Include="Assets\Script\GUI\Result.cs" />
     <Compile Include="Assets\Script\GUI\Share.cs" />
     <Compile Include="Assets\Script\Managers\GameplayManager.cs" />
     <Compile Include="Assets\Script\Managers\RepositoryManager.cs" />

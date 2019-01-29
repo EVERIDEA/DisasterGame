@@ -6,26 +6,31 @@ using UnityEngine.UI;
 public class TimeBarManager : MonoBehaviour
 {
     public Image fillImg;
-    float timeAmt = 100;
+    float timeAmt = 120;
     float time;
 
-    // Use this for initialization
-    void Start()
+    private void Start()
     {
+        Time.timeScale = 1;
         time = timeAmt;
     }
 
-    // Update is called once per frame
-    void Update()
+    
+    private void Update()
     {
         if (time > 0)
         {
             time -= Time.deltaTime;
             fillImg.fillAmount = time / timeAmt;
+            Global.Timer = time;
+            Global.Duration = timeAmt;
         }
         else
         {
+            time = 0;
             EventManager.TriggerEvent(new ResultEvents());
+            Global.Timer = time;
+            Global.Duration = timeAmt; 
         }
     }
 }
